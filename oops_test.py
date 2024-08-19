@@ -36,13 +36,34 @@ class AtmMachine():
         print('Pin Created Successfilly!!!')
         self.menu()
     def change_pin(self):
-        pass
+        old_pin = input('Enter the old pin: ')
+        if self.pin == old_pin:
+            new_pin = input('Enter the new pin: ')
+            self.pin = new_pin
+            print('Pin changed successfully!!!')
+        else:
+            print("Incorrect pin!!!")
+        self.menu()
     def check_balance(self):
-        pass
+        user_pin = input('Enter the pin: ')
+        if user_pin == self.pin:
+            print(f"Your current account balance is {self.balance}")
+            self.menu()
+        else:
+            print('Wrong Pin...Try again')
     def withdraw(self):
-        pass
+        user_pin = input('Enter the Pin: ')
+        if user_pin == self.pin:
+            withdraw_amount = int(input('Enter the amount to withdraw: '))
+            if withdraw_amount <= self.balance:
+                self.balance = self.balance - withdraw_amount
+                print(f'Current balance is {self.balance}')
+            else:
+                print('Insufficient balance')
+        else:
+            print('Wrong Pin!!!')
+        self.menu()
 
         
 
 atm = AtmMachine()
-print(atm.pin)
