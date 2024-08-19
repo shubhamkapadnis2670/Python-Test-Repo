@@ -26,3 +26,5 @@ def division(a,b):
 
 result = division(10,0)
 print(result)
+
+
