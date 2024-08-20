@@ -35,7 +35,7 @@ class AtmMachine():
         self.balance = user_balance
         print('Pin Created Successfilly!!!')
         self.menu()
-    def change_pin(self):
+    def change_pin(self):   
         old_pin = input('Enter the old pin: ')
         if self.pin == old_pin:
             new_pin = input('Enter the new pin: ')
